@@ -16,7 +16,7 @@ const ProductItemForm = (props) => {
                 return
             }
         
-
+    props.onAddToCart(enteredAmountNumber)
      }
 
      return (

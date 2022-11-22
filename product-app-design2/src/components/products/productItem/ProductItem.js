@@ -1,8 +1,22 @@
+
+import {useContext} from 'react'
 import classes from './ProductItem.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import StarRating from '../rating/StarRating'
 import ProductItemForm from './ProductItemForm'
+import CartContext from '../../../store/cart-context'
 const ProductItem =(props) =>{
+
+    const cartCtx = useContext(CartContext)
+    const addToCartHandler = amount => {
+        cartCtx.addItem({
+            productId: props.productId,
+            productName: props.productName,
+            price: props.price,
+            amount: amount
+        })
+
+    }
 
     return (
 //         <li className={classes.product}>
@@ -36,7 +50,7 @@ className='avatar' style={{width:50,margin:2}}
 </td>
 
 <td>
-    <ProductItemForm/>
+    <ProductItemForm onAddToCart={addToCartHandler}/>
 </td>
 </tr>
 

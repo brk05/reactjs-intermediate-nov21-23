@@ -1,6 +1,7 @@
 import classes from './ProductItem.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import StarRating from '../rating/StarRating'
+import ProductItemForm from './ProductItemForm'
 const ProductItem =(props) =>{
 
     return (

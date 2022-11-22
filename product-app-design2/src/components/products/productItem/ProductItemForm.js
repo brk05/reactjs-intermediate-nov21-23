@@ -1,5 +1,5 @@
  import {useRef,useState} from 'react'
-
+ import Input from '../../ui/Input'
 const ProductItemForm = (props) => {
      const [amountIsValid,setAmountIsValid]  = useState(true)
      const amountInputRef = useRef()
@@ -31,3 +31,5 @@ const ProductItemForm = (props) => {
         </form>
      )
 }
+
+export default ProductItemForm

@@ -2,12 +2,15 @@ import React, {useContext, useState} from 'react'
 import CartItem from './CartItem';
 import Checkout from './Checkout';
 import CartContext from '../../store/cart-context'
+import Modal from '../ui/Modal'
+import classes from './Cart.module.css'
 
 const Cart = (props) =>{
     const [isCheckout,setIsCheckout] = useState(false)
     const [isSubmitting,setIsSubmitting] = useState(false)
     const [didSubmit,setDidSubmit] = useState(false)
     const cartCtx = useContext(CartContext)
+    const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`
     const hasItems = cartCtx.items.length > 0
     const cartItemAddHandler = item =>{
         cartCtx.addItem(item)
@@ -28,7 +31,7 @@ const Cart = (props) =>{
     }
 
     const cartItems =(
-        <ul className={classess['cart-item']}>
+        <ul className={classes['cart-item']}>
 
             {
                 cartCtx.items.map(item =>
@@ -48,7 +51,7 @@ const Cart = (props) =>{
 
     const modalActions = (
         <div className={classes.actions}>
-          <button className={classes['button--alt']} onClick={props.onClose}>
+          <button className={classes['button-alt']} onClick={props.onClose}>
             Close
           </button>
           {hasItems && (
@@ -94,4 +97,4 @@ const Cart = (props) =>{
         </Modal>
       );
     };
-
+export default Cart

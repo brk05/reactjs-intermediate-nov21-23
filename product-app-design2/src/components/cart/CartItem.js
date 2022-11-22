@@ -1,4 +1,4 @@
-
+import classes from './CartItem.css'
 
 const CartItem  = (props) =>{
     return (

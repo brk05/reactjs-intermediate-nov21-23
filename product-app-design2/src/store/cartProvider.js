@@ -56,3 +56,4 @@ return (
     </CartContext.Provider>
 )
 }
+export default CartProvider

@@ -1,5 +1,15 @@
-{
-    "orders":[
-        
-    ]
+{"users":
+[
+  {"user":
+{"name":"pradeep",
+"street":"GKVK",
+"city":"Bangalore",
+"postalCode":"56775"
+},
+"orderedItems":
+[
+  {"productId":1,"productName":"Iphone13","price":75645.4,"amount":2}
+  ]
+}
+]
 }

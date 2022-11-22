@@ -22,7 +22,7 @@ const Cart = (props) =>{
         await fetch('http://localhost:4300/orders',{
             method: 'POST',
             body: JSON.stringify({
-                use: userData,
+                user: userData,
                 orderedItems: cartCtx.items
             })
         })
@@ -39,7 +39,7 @@ const Cart = (props) =>{
                     key={item.productId}
                     productName = {item.productName}
                     price ={item.price}
-                    amout={item.amount}
+                    amount={item.amount}
                     onAdd={()=> cartItemAddHandler(item)}
                     
                     />

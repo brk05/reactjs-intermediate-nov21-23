@@ -1,24 +1,49 @@
+
+import {useEffect, Fragment} from 'react'
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react'
+import Products from './components/products/Products';
+import CartProvider from './store/cartProvider'
+import Cart from './components/cart/Cart'
+import Header from './components/Layout/Header'
 
+
+import {sendCartData,fetchCartData} from './store/cart-actions'
+import {useSelector,useDispatch} from 'react-redux'
 function App() {
+
+  const dispatch = useDispatch()
+  const showCart = useSelector(state => state.ui.cartIsVisible)
+  const cart = useSelector(state => state.cart)
+  const notification = useSelector(state => state.ui.notification)
+  
+  useEffect(() =>{
+    dispatch(fetchCartData)
+  },[dispatch])
+  
+  useEffect(() =>{
+   if(isInitial){
+    isInitial = false
+    return
+   }
+   if(cart.changed){
+    dispatch(sendCartData(cart))
+   }
+  },[cart,dispatch])
+
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+ <Fragment>
+ 
+
+  <Header />
+    <main>
+      {showCart && <Cart/>}
+      <Products/>
+    </main>
+ </Fragment>
+
   );
 }
 

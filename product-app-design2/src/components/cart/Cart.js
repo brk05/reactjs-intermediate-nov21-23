@@ -1,5 +1,6 @@
 import React, {useContext, useState} from 'react'
-
+import CartItem from './CartItem';
+import Checkout from './Checkout';
 import CartContext from '../../store/cart-context'
 
 const Cart = (props) =>{

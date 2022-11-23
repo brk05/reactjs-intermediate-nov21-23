@@ -1,9 +1,9 @@
 
-import {useContext} from 'react'
-import classes from './ProductItem.css'
+
+//import classes from './ProductItem.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import StarRating from '../rating/StarRating'
-import ProductItemForm from './ProductItemForm'
+
 import { cartActions } from '../../../store/cart-slice'
 import { useDispatch } from 'react-redux'
 

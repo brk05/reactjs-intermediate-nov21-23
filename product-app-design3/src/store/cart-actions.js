@@ -4,7 +4,7 @@ export const fetchCartData = () =>{
     return async (dispatch) => {
 
         const fetchData = async () => {
-        const response = await fetch('http://localhost:4300/orders')
+        const response = await fetch('http://localhost:4300/items')
         if(!response.ok){
             throw new Error('Could Not Fetch Cart data')
         }
@@ -40,8 +40,8 @@ export const sendCartData = (cart) =>{
         )
     
     const sendRequest = async () =>{
-        const response = await fetch('http://localhost:4300/orders',{
-            method:'PUT',
+        const response = await fetch('http://localhost:4300/items',{
+            method:'POST',
             body: JSON.stringify({
                 items: cart.items,
                 totalQuantity: cart.totalQuantity

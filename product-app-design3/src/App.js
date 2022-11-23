@@ -1,12 +1,12 @@
 
 import {useEffect, Fragment} from 'react'
-import logo from './logo.svg';
+
 import './App.css';
-import {useState} from 'react'
+
 import Products from './components/products/Products';
-import CartProvider from './store/cartProvider'
-import Cart from './components/cart/Cart'
-import Header from './components/Layout/Header'
+
+import Cart from './components/Cart/Cart'
+import Layout from './components/Layout/Layout';
 
 
 import {sendCartData,fetchCartData} from './store/cart-actions'
@@ -17,7 +17,7 @@ function App() {
   const showCart = useSelector(state => state.ui.cartIsVisible)
   const cart = useSelector(state => state.cart)
   const notification = useSelector(state => state.ui.notification)
-  
+  const isInitial = false
   useEffect(() =>{
     dispatch(fetchCartData)
   },[dispatch])
@@ -37,11 +37,10 @@ function App() {
  <Fragment>
  
 
-  <Header />
-    <main>
-      {showCart && <Cart/>}
-      <Products/>
-    </main>
+ <Layout>
+        {showCart && <Cart />}
+        <Products />
+      </Layout>
  </Fragment>
 
   );

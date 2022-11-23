@@ -1,15 +1,51 @@
-{"users":
-[
-  {"user":
-{"name":"pradeep",
-"street":"GKVK",
-"city":"Bangalore",
-"postalCode":"56775"
-},
-"orderedItems":
-[
-  {"productId":1,"productName":"Iphone13","price":75645.4,"amount":2}
+{
+  "items": [
+    {
+      "productId": 1,
+      "price": 75645.4,
+      "quantity": 1,
+      "totalPrice": 75645.4,
+      "productName": "Iphone13"
+    },
+    {
+      "productId": 1,
+      "price": 75645.4,
+      "quantity": 1,
+      "totalPrice": 75645.4,
+      "productName": "Iphone13"
+    },
+    {
+      "productId": 2
+    },
+    {
+      "productId": 3
+    },
+    {
+      "productId": 4
+    },
+    {
+      "productId": 5
+    },
+    {
+      "productId": 6
+    },
+    {
+      "productId": 7
+    },
+    {
+      "productId": 8
+    },
+    {
+      "productId": 9
+    },
+    {
+      "productId": 10
+    },
+    {
+      "productId": 11
+    },
+    {
+      "productId": 12
+    }
   ]
-}
-]
 }
